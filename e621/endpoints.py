@@ -114,11 +114,11 @@ class BaseEndpoint(Generic[Model]):
         if ignore_pagination:
             if limit is None:
                 raise ValueError("limit is required when ignore_pagination is True")
-            return self._model.from_list(
-                self._api.session.paginated_get(self._url, params, self._root_entity_name), self._api
-            )
+            resp = self._api.session.paginated_get(self._url, params, self._root_entity_name)
+            return self._model.from_list(resp, self._api, ignore_errors=True)
         else:
-            return self._model.from_response(self._api.session.get(self._url, params=params), self._api, expect=list)
+            resp = self._api.session.get(self._url, params=params)
+            return self._model.from_response(resp, self._api, expect=list)
 
     def _default_create(self, params: Dict[str, Any], files: Optional[Dict[str, Any]] = None) -> Model:
         return self._model.from_response(self._api.session.post(self._url, params=params, files=files), self._api)
