@@ -97,7 +97,3 @@ api.posts.create(
     description="Rick roll?"
 )
 ```
-
-## FAQ
-
-* For more information on these and other api endpoints, please, visit our [endpoint reference](TODO)
