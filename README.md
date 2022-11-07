@@ -1,7 +1,7 @@
-# e621
-
 ## WARNING
 This fork is deprecated. Use https://github.com/Hmiku8338/e621 instead.
+
+# e621
 
 e621 is a feature-rich high-level e621 and e926 API wrapper.
 
