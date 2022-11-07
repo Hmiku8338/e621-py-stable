@@ -502,16 +502,16 @@ class _PostsGetterMixin:
         return self.e621api.posts.search(tags=f"id:{','.join(map(str, self.post_ids))}")
 
 
-class Pool(_PostsGetterMixin):
+class Pool(BaseModel, _PostsGetterMixin):
     id: int
     name: str
     created_at: str
     updated_at: Optional[str]
     creator_id: int
     description: str
-    is_active: bool
+    is_active: bool | None
     category: str
-    is_deleted: bool
+    is_deleted: bool | None
     post_ids: List[int]
     creator_name: str
     post_count: int
