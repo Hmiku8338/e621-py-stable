@@ -1,5 +1,8 @@
 # e621
 
+## WARNING
+This fork is deprecated. Use https://github.com/Hmiku8338/e621 instead.
+
 e621 is a feature-rich high-level e621 and e926 API wrapper.
 
 It provides access to almost all of the endpoints available. The only exceptions are unstable and admin-only endpoints.
